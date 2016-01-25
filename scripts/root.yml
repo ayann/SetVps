@@ -1,6 +1,5 @@
 cmd:
   - 'dpkg --configure -a'
-  - 'apt-get update -y && apt-get upgrade -y &&  apt-get autoremove -y'
   - 'apt-get install language-pack-fr -y'
   - 'apt-get -y install curl python-software-properties git-core nodejs'
   - 'sed -i.bak -e "s/UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config'
@@ -16,4 +15,4 @@ cmd:
   - 'cp ~/.ssh/authorized_keys /home/rails/.ssh/'
   - 'chown rails.rails /home/rails/.ssh -R'
   - 'chmod go-rwx /home/rails/.ssh -R'
-  - 'reboot'
+  - 'shutdown -r 0 ; exit'

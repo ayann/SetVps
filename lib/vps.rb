@@ -1,8 +1,11 @@
 # Require Yaml module
 require 'yaml'
+require 'net/ssh'
 require "vps/version"
 require "vps/scripts"
+require "vps/setup"
+require 'progress_bar'
 
 module Vps
-  # Your code goes here...
+  @bar = ProgressBar.new
 end
