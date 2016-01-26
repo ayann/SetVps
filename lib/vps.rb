@@ -7,5 +7,5 @@ require "vps/setup"
 require 'progress_bar'
 
 module Vps
-  @bar = ProgressBar.new
+  @bar = ProgressBar.new 50
 end

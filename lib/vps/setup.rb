@@ -20,8 +20,10 @@ module Vps
     def root_step
       Net::SSH.start(@address, :root) do |session|
         Vps::Script.root_script["cmd"].each do |command|
+          logger command
           session.exec! command do |channel, stream, data|
-            @bar.increment!
+            # @bar.increment!
+            print data  if stream == :stdout
             channel.send_data( "Y\n" )
           end
         end
@@ -31,9 +33,10 @@ module Vps
     def rails_step
       Net::SSH.start(@address, :rails) do |session|
         Vps::Script.rails_script["cmd"].each do |command|
+          logger command
           session.exec! command do |channel, stream, data|
-            @bar.increment!
-            # print data  if stream == :stdout
+            # @bar.increment!
+            print data  if stream == :stdout
             channel.send_data( "Y\n" )
           end
         end
