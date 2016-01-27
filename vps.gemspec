@@ -27,7 +27,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "mina", ">= 0.2.1"
   spec.add_dependency "net-ssh"
   spec.add_dependency "progress_bar"
   spec.add_development_dependency "bundler", "~> 1.11"
