@@ -1,11 +1,12 @@
 # Require Yaml module
 require 'yaml'
 require 'net/ssh'
-require "vps/version"
-require "vps/scripts"
-require "vps/setup"
 require 'progress_bar'
 
+require "vps/setup"
+require "vps/version"
+require "vps/commands"
+
 module Vps
-  @bar = ProgressBar.new(Vps::Script.root_script["cmd"].count + Vps::Script.rails_script["cmd"].count)
+  @bar = ProgressBar.new(Vps::Command.root["cmd"].count + Vps::Command.rails["cmd"].count)
 end

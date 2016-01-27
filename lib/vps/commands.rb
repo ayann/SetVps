@@ -1,14 +1,14 @@
 module Vps
-  module Script
+  module Command
     class << self
       def app_path
         File.expand_path(File.join(File.dirname(__FILE__), '../../'))
       end
 
       [:root, :rails].each do |method|
-        define_method("#{method}_script") do
+        define_method("#{method}") do
           begin
-            YAML.load_file send("#{method}_script_path")
+            YAML.load_file send("#{method}_command_file")
           rescue Psych::SyntaxError, Errno::EACCES, Errno::ENOENT
             {}
           end
@@ -18,8 +18,8 @@ module Vps
       private
 
       [:root, :rails].each do |method|
-        define_method("#{method}_script_path") do
-          File.join(app_path, "scripts/#{method}.yml")
+        define_method("#{method}_command_file") do
+          File.join(app_path, "commands/#{method}.yml")
         end
       end
     end

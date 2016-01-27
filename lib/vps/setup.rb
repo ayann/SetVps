@@ -40,11 +40,11 @@ module Vps
     end
 
     def root_command
-      Vps::Script.root_script["cmd"]
+      Vps::Command.root["cmd"]
     end
 
     def rails_command
-      Vps::Script.rails_script["cmd"].map do |cmd|
+      Vps::Command.rails["cmd"].map do |cmd|
         cmd % ([@project] * 2)
       end
     end
@@ -55,7 +55,7 @@ module Vps
 
     def logger msg
       puts "\n"
-      puts "#{msg}"
+      puts "#{ msg }"
       puts "\n"
     end
   end
