@@ -7,5 +7,5 @@ require "vps/setup"
 require 'progress_bar'
 
 module Vps
-  @bar = ProgressBar.new 50
+  @bar = ProgressBar.new(Vps::Script.root_script["cmd"].count + Vps::Script.rails_script["cmd"].count)
 end
