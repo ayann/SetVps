@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Armand Niampa"]
   spec.email         = ["armand.niampa@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
+  spec.description   = %q{Write a longer description or delete this line.}
   spec.homepage      = "https://github.com/ayann/digitalocean_vps/tree/master/lib/vps"
   spec.license       = "MIT"
 
